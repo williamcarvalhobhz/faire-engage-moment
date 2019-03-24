@@ -1,4 +1,4 @@
-package comfaire.engage.api.services;
+package com.faire.engage.api.services;
 
 import java.io.Serializable;
 import java.util.Date;

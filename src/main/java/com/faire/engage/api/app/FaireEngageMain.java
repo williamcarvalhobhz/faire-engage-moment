@@ -8,7 +8,7 @@ import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import comfaire.engage.api.services.EngageService;
+import com.faire.engage.api.services.EngageService;
 
 
 public class FaireEngageMain {
