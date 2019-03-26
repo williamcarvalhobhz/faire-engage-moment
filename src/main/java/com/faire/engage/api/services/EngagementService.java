@@ -1,3 +1,6 @@
+/**
+ * Engagement REST Service
+ */
 package com.faire.engage.api.services;
 
 import java.io.Serializable;
@@ -39,13 +42,13 @@ public class EngagementService implements Serializable {
 	
 	/**
 	 * 
-	 * @return The Open an Active Engagements
+	 * @return The open engagements
 	 */
 	@GET
 	@Path("/")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public List<Engagement> findOpenEngagements() {
-
+		
 		return getBusiness().findByDate(new Date(), true);
 	}
 

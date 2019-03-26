@@ -49,6 +49,11 @@ public class EngagementBusinessImpl extends AbstractBusinessImpl<Engagement, Str
 	@Autowired
 	private ProductOptionRepository productOptionRepository;	
 	
+	/**
+	 * Populates the HSQL database with some data.
+	 * 
+	 * @throws ParseException
+	 */
     @PostConstruct
     public void populate() throws ParseException {    	
     		
@@ -86,6 +91,9 @@ public class EngagementBusinessImpl extends AbstractBusinessImpl<Engagement, Str
     }		
 		
 
+    /**
+     * Find the open Engagements and fetch the sub-classes
+     */
 	@Transactional(propagation=Propagation.SUPPORTS)
 	public List<Engagement> findByDate(final Date date, final Boolean ative){
 		List<Engagement> result = getRepository().findByDate(date, ative);
