@@ -8,4 +8,4 @@ It's all about get people together! If more retailers buy it, more discount all 
 
 The payment will only happen when the timer is over!
 
-#### Stack: Java, Spring, Spring Data, Hibernate, Jersey, Jackson
+#### Stack: Java, Spring, Spring Data, Hibernate, Jersey, Jackson, HSQL
