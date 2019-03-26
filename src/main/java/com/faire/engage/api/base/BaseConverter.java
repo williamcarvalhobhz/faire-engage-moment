@@ -1,5 +1,5 @@
 /**
- * 
+ * Base converter class to be implemented by the converters of the application.
  */
 package com.faire.engage.api.base;
 

@@ -1,4 +1,6 @@
-
+/**
+ * Base repository class to be implemented by the repository layer.
+ */
 package com.faire.engage.api.base;
 
 import java.io.Serializable;

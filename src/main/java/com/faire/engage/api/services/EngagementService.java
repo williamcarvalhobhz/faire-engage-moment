@@ -12,27 +12,40 @@ import javax.ws.rs.core.MediaType;
 import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.faire.engage.api.buiness.EngageBusiness;
-import com.faire.engage.api.entities.Engage;
+import com.faire.engage.api.buiness.EngagementBusiness;
+import com.faire.engage.api.buiness.ProductOptionBusiness;
+import com.faire.engage.api.entities.Engagement;
 
 import lombok.Getter;
 
+/**
+ * 
+ * @author William Matos de Carvalho
+ *
+ */
 @Service
-@Path("engaged/")
-public class EngageService implements Serializable {
-
+@Path("engagements/")
+public class EngagementService implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Getter
 	@Autowired
-	private EngageBusiness business;
+	private EngagementBusiness business;
 	
+	@Getter
+	@Autowired
+	private ProductOptionBusiness productOptionBusiness;
+	
+	/**
+	 * 
+	 * @return The Open an Active Engagements
+	 */
 	@GET
 	@Path("/")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public List<Engage> findOpenedEngages() {
-			
+	public List<Engagement> findOpenEngagements() {
+
 		return getBusiness().findByDate(new Date(), true);
 	}
 

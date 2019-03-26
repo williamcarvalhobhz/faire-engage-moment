@@ -1,3 +1,6 @@
+/**
+ * Product entity.
+ */
 package com.faire.engage.api.entities;
 
 import java.util.Date;
@@ -6,20 +9,22 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import com.faire.engage.api.base.BaseEntity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * 
@@ -31,51 +36,53 @@ import lombok.NoArgsConstructor;
 @Table(name = "product")
 @EqualsAndHashCode(callSuper = false, of = "id")
 @NoArgsConstructor
+@ToString(exclude="options")
 public class Product extends BaseEntity<String>{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@Column
-	@SequenceGenerator(name="product_sequence", sequenceName="product_sequence")
-	@GeneratedValue(generator = "product_sequence", strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	private String id;
 	
-	@Column
-	private String brand_id;
+	@Column(name="brand_id")
+	private String brandId;
 	
-	@Column
-	private String short_description;
+	@Column(name="short_description")
+	private String shortDescription;
 	
-	@Column
+	@Lob
+	@Column(name="description", columnDefinition="clob")
 	private String description;
 	
-	@Column
-	private Integer wholesale_price_cents;
+	@Column(name="wholesale_price_cents")
+	private Integer wholeSalePriceCents;
 
-	@Column
-	private Integer retail_price_cents;
+	@Column(name="retail_price_cents")
+	private Integer retailPriceCents;
 
-	@Column
+	@Column(name="active")
 	private Boolean active;
 
-	@Column
+	@Column(name="name")
 	private String name;
 
-	@Column
-	private Integer unit_multiplier;
-	
+	@Column(name="unit_multiplier")
+	private Integer unitMultiplier;
+		
 	@OneToMany
 	@JoinColumn(name = "product_id")
 	private List<ProductOption> options;
 
+	@Column(name="created_at")
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column
-	private Date created_at;
+	private Date createdAt;
 
+	@Column(name="updated_at")
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column
-	private Date updated_at;
+	private Date updatedAt;
 
 	
 }

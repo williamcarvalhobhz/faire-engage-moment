@@ -1,4 +1,6 @@
-
+/**
+ * Base entity class to be implemented by the entities of the application.
+ */
 package com.faire.engage.api.base;
 
 import java.io.Serializable;

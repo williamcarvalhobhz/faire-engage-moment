@@ -1,3 +1,6 @@
+/**
+ * This class is responsible for the context injection of the application. 
+ */
 package com.faire.engage.api.base;
 
 import org.springframework.beans.BeansException;
@@ -6,6 +9,11 @@ import org.springframework.context.ApplicationContextAware;
 
 import lombok.Getter;
 
+/**
+ * 
+ * @author William Matos de Carvalho
+ *
+ */
 public class ApplicationContextInject implements ApplicationContextAware {
 	
 	@Getter

@@ -22,9 +22,9 @@
 	<!-- Local Data Source -->
 	<bean id="dataSource"	class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="org.hsqldb.jdbc.JDBCDriver" 
-        p:url="jdbc:hsqldb:mem:testdb;sql.syntax_pgs=true;DB_CLOSE_DELAY=-1"
+        p:url="jdbc:hsqldb:mem:fairedb;sql.syntax_pgs=true;DB_CLOSE_DELAY=-1"
         p:username="sa" 
-        p:password="" >
+        p:password="" >        
 	</bean>
 	
 	<tx:annotation-driven proxy-target-class="true"	transaction-manager="transactionManager" />
@@ -43,6 +43,7 @@
                 <prop key="hibernate.format_sql">false</prop>
                 <prop key="hibernate.hbm2ddl.auto">create</prop>
                 <prop key="hibernate.connection.autocommit">false</prop>
+                <prop key="hibernate.connection.autocommit">false</prop>                               
 			</props>
 		</property>
 		<property name="packagesToScan" value="com.faire.engage.api.entities" />

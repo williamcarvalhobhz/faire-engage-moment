@@ -1,3 +1,6 @@
+/**
+ * Enumeration of order status.
+ */
 package com.faire.engage.api.enums;
 
 /**

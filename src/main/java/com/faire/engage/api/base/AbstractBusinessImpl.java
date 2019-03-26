@@ -1,3 +1,6 @@
+/**
+ * Abstract Class to be extended by the Business Layer
+ */
 package com.faire.engage.api.base;
 
 import java.io.Serializable;
@@ -40,7 +43,7 @@ public abstract class AbstractBusinessImpl<E extends BaseEntity<?>, ID extends S
 	 * 
 	 */
 	public AbstractBusinessImpl() {
-		log.debug("Iniciando a camada de negócios abstrata...");
+		log.debug("Starting the Abstract Business Layer...");
 	}
 
 	/**
@@ -56,7 +59,7 @@ public abstract class AbstractBusinessImpl<E extends BaseEntity<?>, ID extends S
 	/**
 	 * 
 	 */
-        @Override
+    @Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public E processUpdate(final E entity){
 		return execute(entity, TransactionType.UPDATE);
@@ -65,7 +68,7 @@ public abstract class AbstractBusinessImpl<E extends BaseEntity<?>, ID extends S
 	/**
 	 * 
 	 */
-        @Override
+    @Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void processRemove(final E entity){
 		execute(entity);
@@ -75,7 +78,7 @@ public abstract class AbstractBusinessImpl<E extends BaseEntity<?>, ID extends S
 	 * @param id
 	 * @return
 	 */
-        @Override
+    @Override
 	public E find(final ID id) {
 		return getRepository().findOne(id);
 	}
@@ -83,7 +86,7 @@ public abstract class AbstractBusinessImpl<E extends BaseEntity<?>, ID extends S
 	/**
 	 * @return
 	 */
-        @Override
+    @Override
 	public List<E> findAll() {
 		return getRepository().findAll();
 	}

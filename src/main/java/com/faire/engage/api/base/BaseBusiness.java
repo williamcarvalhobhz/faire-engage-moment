@@ -1,3 +1,6 @@
+/**
+ * Base business class to be implemented by the business layer.
+ */
 package com.faire.engage.api.base;
 
 import java.io.Serializable;

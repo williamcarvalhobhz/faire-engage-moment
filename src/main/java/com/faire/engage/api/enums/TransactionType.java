@@ -1,3 +1,6 @@
+/**
+ * Enumeration of transaction types.
+ */
 package com.faire.engage.api.enums;
 
 import java.io.Serializable;
