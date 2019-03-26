@@ -1,0 +1,17 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "description": "",
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "faire-engage-moment",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
