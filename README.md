@@ -1,6 +1,6 @@
 # Faire Engage Moment
 
-### This is the backend prospect project for this inovating funcionality and was proposed in the Vanhack Hackaton Brazil 2019. It explores high tech patterns and resources for the java platform.
+### This is the backend prospect project for this innovative functionality and was proposed in the Vanhack Hackaton Brazil 2019. It explores high tech patterns and resources for the java platform.
 
 #### The new feature of faire to help even more makers!
 
